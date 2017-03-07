@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/ThunderMail/!svn/ver/25/ThunderMailDaemon/src/com/mail/thread
+END
+TaxbillToThunderMailThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ThunderMail/!svn/ver/25/ThunderMailDaemon/src/com/mail/thread/TaxbillToThunderMailThread.java
+END
+ThunderMailToTaxbillThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ThunderMail/!svn/ver/25/ThunderMailDaemon/src/com/mail/thread/ThunderMailToTaxbillThread.java
+END

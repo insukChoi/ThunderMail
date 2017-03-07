@@ -1,0 +1,46 @@
+10
+
+dir
+30
+https://172.20.30.154/svn/ThunderMail/ThunderMailDaemon/src/com/mail
+https://172.20.30.154/svn/ThunderMail
+
+
+
+2016-07-11T04:28:10.786875Z
+30
+KimSungMin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+b43b6b37-c725-7f4a-9c62-dd75045b6512
+
+sql
+dir
+
+dao
+dir
+
+main
+dir
+
+daoimpl
+dir
+
+thread
+dir
+
+common
+dir
+

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="Taxbill">
+
+<!-- SELECT statement -->
+<select id="TAXBILL_SNDMAIL_R000" parameterType="java.util.HashMap" resultType="java.util.HashMap" useCache="false" flushCache="true"><![CDATA[
+ SELECT 
+     rownum rnum, 
+     A.ISSU_ID, 
+     A.SEQ_NO, 
+     crypt_pkg.F_DECRYPT(A.SND_ADDR) SND_ADDR, 
+     crypt_pkg.F_DECRYPT(A.RES_ADDR) RES_ADDR, 
+     A.TITL, 
+     A.CONTS, 
+     A.USER_NM, 
+     A.LINK_URL, 
+     A.BTN_NM, 
+     A.TPL_NM, 
+     A.INS_DATE,
+     A.INS_TIME,   
+     A.SND_YN,
+     B.TAX_TYPE
+FROM 
+    ( 
+        select 
+            a.* 
+        from ETAXBILL_SND_MAIL a 
+        where 1=1
+            AND SND_YN= #{SND_YN}
+            AND INS_DATE BETWEEN #{INS_DATE_S} AND #{INS_DATE_E} 
+        ORDER BY INS_TIME ASC 
+    ) A, ETAXBILL_MSTR B
+WHERE 1=1 
+    and A.ISSU_ID = B.ISSU_ID(+)
+    and 
+    rownum <= 500   ]]>	
+</select>
+
+<select id="TAXBILL_SNDMAIL_R001" parameterType="java.util.HashMap" resultType="java.util.HashMap" useCache="false" flushCache="true"><![CDATA[
+ SELECT 
+ 	rnum, 
+ 	ISSU_ID, 
+ 	SEQ_NO, 
+ 	crypt_pkg.F_DECRYPT(SND_ADDR) SND_ADDR, 
+ 	crypt_pkg.F_DECRYPT(RES_ADDR) RES_ADDR, 
+ 	TITL, 
+ 	CONTS, 
+ 	USER_NM, 
+ 	LINK_URL, 
+ 	BTN_NM, 
+ 	TPL_NM, 
+ 	INS_DATE, 
+ 	INS_TIME, 
+ 	SND_YN 
+FROM 
+	( 
+		select 
+			rownum rnum, 
+			a.* 
+		from ETAXBILL_SND_MAIL a 
+		where 1=1
+			AND SND_YN= #{SND_YN}
+			AND INS_DATE BETWEEN #{INS_DATE_S} AND #{INS_DATE_E} 
+		ORDER BY INS_TIME ${ORDERBYFLAG} 
+	) 
+ ]]>	
+</select>
+
+
+
+<select id="TAXBILL_BIZMAIL_R002" parameterType="java.util.HashMap" resultType="java.util.HashMap" useCache="false" flushCache="true"><![CDATA[
+SELECT  
+	ISSU_ID, 
+	SND_STAT, 
+	USE_MON, 
+	USE_DATETIME, 
+	RCV_GB, 
+	SND_GB, 
+	crypt_pkg.F_DECRYPT(CORP_NO) CORP_NO, 
+	USER_ID, 
+	SND_TYPE 
+FROM ETAXBILL_BIZMAIL 
+WHERE 1=1
+	AND ISSU_ID = #{ISSU_ID} 
+	AND SEQ_NO  = #{SEQ_NO}  
+	AND SND_TYPE IN (#{SND_TYPE1},#{SND_TYPE2})   ]]>	
+</select>
+
+
+
+<select id="TAXBILL_MSTR_R003" parameterType="java.util.HashMap" resultType="java.util.HashMap" useCache="false" flushCache="true"><![CDATA[
+SELECT 
+	TAX_TYPE 
+FROM ETAXBILL_MSTR 
+WHERE 1=1
+	AND ISSU_ID = #{ISSU_ID}      ]]>	
+</select>
+
+ 
+
+<select id="TAXBILL_STS_R004" parameterType="java.util.HashMap" resultType="java.util.HashMap" useCache="false" flushCache="true"><![CDATA[
+SELECT 
+	SELR_CORP_NM 
+FROM ETAXBILL_STS_MSTR ESM, ETAXBILL_USER EU 
+WHERE 1=1
+	AND ESM.SELR_CORP_NO = EU.CORP_NO 
+	AND ESM.trans_stat_seq =  #{ISSU_ID}  
+	AND MSTR_YN = #{MSTR_YN}    ]]>	
+</select>
+
+
+
+
+
+<!-- UPDATE statement -->
+<update id="TAXBILL_SNDMAIL_U001" parameterType="java.util.HashMap" flushCache="true"><![CDATA[
+UPDATE 
+	ETAXBILL_SND_MAIL 
+SET 
+	SND_YN = #{SND_YN},
+	SND_DATE = #{SND_DATE}, 
+	SND_TIME = #{SND_TIME} 	
+WHERE 1=1
+	AND ISSU_ID = #{ISSU_ID} 
+	AND SEQ_NO  = #{SEQ_NO}     ]]>	
+</update>
+
+
+
+<update id="TAXBILL_SNDMAIL_U002" parameterType="java.util.HashMap" flushCache="true"><![CDATA[
+UPDATE 
+	ETAXBILL_SND_MAIL 
+SET 
+	SND_YN = #{SND_YN}, 
+	SND_ADDR = crypt_pkg.F_ENCRYPT( #{SND_ADDR} ), 
+	SND_DATE = #{SND_DATE}, 
+	SND_TIME = #{SND_TIME} 
+WHERE 1=1
+	AND ISSU_ID = #{ISSU_ID}
+	AND SEQ_NO = #{SEQ_NO}   ]]>	
+</update>
+
+
+
+
+<update id="TAXBILL_BIZMAIL_U001" parameterType="java.util.HashMap" flushCache="true"><![CDATA[
+UPDATE
+ 	ETAXBILL_BIZMAIL 
+SET 
+	SND_STAT = #{SND_STAT}, 
+	SND_ADDR = crypt_pkg.F_ENCRYPT( #{SND_ADDR} ),
+	ERR_CODE = #{ERR_CODE}, 
+	ERR_MSG  = #{ERR_MSG}
+WHERE 1=1
+	AND ISSU_ID = #{ISSU_ID}
+	AND SEQ_NO = #{SEQ_NO}    ]]>	
+</update>
+
+
+
+
+
+
+ 
+</mapper>

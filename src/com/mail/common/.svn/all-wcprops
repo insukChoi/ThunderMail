@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/ThunderMail/!svn/ver/30/ThunderMailDaemon/src/com/mail/common
+END
+DeamonSql.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/ThunderMail/!svn/ver/30/ThunderMailDaemon/src/com/mail/common/DeamonSql.java
+END
+StringUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/ThunderMail/!svn/ver/2/ThunderMailDaemon/src/com/mail/common/StringUtil.java
+END
+WSqlSessionManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ThunderMail/!svn/ver/14/ThunderMailDaemon/src/com/mail/common/WSqlSessionManager.java
+END
+Deamonmail.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/ThunderMail/!svn/ver/19/ThunderMailDaemon/src/com/mail/common/Deamonmail.java
+END
+DropLog.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ThunderMail/!svn/ver/2/ThunderMailDaemon/src/com/mail/common/DropLog.java
+END
+ResultMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/ThunderMail/!svn/ver/2/ThunderMailDaemon/src/com/mail/common/ResultMap.java
+END
+TaxbillUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/ThunderMail/!svn/ver/2/ThunderMailDaemon/src/com/mail/common/TaxbillUtil.java
+END

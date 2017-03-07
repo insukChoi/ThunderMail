@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+	사용방법 : 
+	   1. 메일 템플릿 추가 또는 삭제시에 http://61.251.166.148/tm6/  사이트에서 자동메일 템플릿을 등록한다. 등록 후 automailID를 확인한다.
+	   2. 1번에서 확인한 automailID를 아래의 xml을 추가한다.
+ -->
+
+
+<ThunderMailTemplet>
+	<description>Thunder Mail Templet Management</description>
+	<templets>
+	<!-- 회원가입 감사메일 -->
+		<templet name="email_0001_01.htm">
+			<automailID>1</automailID>
+		</templet>
+		
+	<!-- 비밀번호 찾기 -->	
+		<templet name="email_0002_01.htm">
+			<automailID>2</automailID>
+		</templet>
+		
+	<!-- 세금계산서[광고메일허용] -->	
+		<templet name="email_0018_01.htm">
+			<automailID>3</automailID>
+		</templet>
+		
+	<!-- 세금계산서[광고메일비허용] -->	
+		<templet name="email_0011_01.htm">
+			<automailID>4</automailID>
+		</templet>
+		
+	<!-- 세금계산서[오락] -->	
+		<templet name="biskit_mail_template.html">
+			<automailID>5</automailID>
+		</templet>
+		
+	<!-- 전자발주 -->	
+		<templet name="email_0012_01.htm">
+			<automailID>6</automailID>
+		</templet>
+		
+	<!-- 세금계산서[시우이엔티1] -->	
+		<templet name="email_easypanme_01.htm">
+			<automailID>7</automailID>
+		</templet>
+		
+	<!-- 세금계산서[시우이엔티3] -->	
+		<templet name="email_easypanme_03.htm">
+			<automailID>8</automailID>
+		</templet>
+		
+	<!-- 거래명세서[시우이엔티2] -->	
+		<templet name="email_easypanme_02.htm">
+			<automailID>9</automailID>
+		</templet>
+		
+	<!-- 거래명세서[시우이엔티4] -->	
+		<templet name="email_easypanme_04.htm">
+			<automailID>10</automailID>
+		</templet>
+		
+	<!-- 인증서(참조번호,인가코드)[텍스빌] -->	
+		<templet name="email_0006_01.htm">
+			<automailID>11</automailID>
+		</templet>
+		
+	<!-- 인증서(참조번호,인가코드)[농협] -->	
+		<templet name="email_0006_02.htm">
+			<automailID>12</automailID>
+		</templet>
+		
+	<!-- 거래명세서 -->	
+		<templet name="email_0008_01.htm">
+			<automailID>13</automailID>
+		</templet>
+		
+	<!-- 입금표 -->	
+		<templet name="email_0013_01.htm">
+			<automailID>14</automailID>
+		</templet>
+		
+	<!-- 견적서 -->	
+		<templet name="email_0019_01.htm">
+			<automailID>15</automailID>
+		</templet>
+	</templets>
+</ThunderMailTemplet>

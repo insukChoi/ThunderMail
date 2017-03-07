@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- http://www.mybatis.org/mybatis-3/ko/configuration.html 샘플 참조 -->
+<configuration>
+
+    
+    <environments default="development">
+    <!-- Taxbill Oracle db 연결 -->
+        <environment id="taxbillConn">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="oracle.jdbc.OracleDriver" />
+                <property name="url" value="jdbc:oracle:thin:@172.20.20.197:35211:taxdev" />
+                <property name="username" value="dev_taxbill" />
+                <property name="password" value="dev_taxbill" />
+                <property name="poolMaximumActiveConnections" value="20"/>
+                <property name="poolMaximumIdleConnections" value="20"/>
+                <property name="poolMaximumCheckoutTime" value="20000"/>
+                <property name="poolPingEnabled" value="true"/>
+                <property name="poolPingQuery" value="select 1"/>
+                <property name="poolPingConnectionsNotUsedFor" value="43200"/>
+                <property name="poolTimeToWait" value="30000"/>                
+            </dataSource>
+        </environment>
+        
+	<!-- ThunderMail Maria db 연결 -->
+        <environment id="thunderMailConn">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="jdbc:mysql://61.251.166.151:3307/tm6?useUnicode=yes&amp;characterEncoding=UTF-8" />
+                <property name="username" value="ThunderMail" />
+                <property name="password" value="andwise" />            
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- sql 맵퍼 -->
+    <mappers>
+        <mapper resource="com/mail/sql/TAXBILL_SQL.xml"/>
+        <mapper resource="com/mail/sql/THUNDER_SQL.xml"/>
+    </mappers>
+ 
+</configuration>

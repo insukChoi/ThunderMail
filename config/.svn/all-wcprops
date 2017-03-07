@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/ThunderMail/!svn/ver/28/ThunderMailDaemon/config
+END
+templetMngt.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/ThunderMail/!svn/ver/2/ThunderMailDaemon/config/templetMngt.xml
+END
+myBatisConfig.xml_real
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/ThunderMail/!svn/ver/28/ThunderMailDaemon/config/myBatisConfig.xml_real
+END
+myBatisConfig.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/ThunderMail/!svn/ver/18/ThunderMailDaemon/config/myBatisConfig.xml
+END
+log4j.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/ThunderMail/!svn/ver/13/ThunderMailDaemon/config/log4j.xml
+END
