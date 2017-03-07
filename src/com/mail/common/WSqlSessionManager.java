@@ -22,7 +22,7 @@ public class WSqlSessionManager {
 			reader = new BufferedReader(new FileReader(new File("/taxbill_module/ThunderMail/config/myBatisConfig.xml")));
 			oracle_Factory = new SqlSessionFactoryBuilder().build(reader, "taxbillConn");	
 		}
-		return oracle_Factory;
+		return oracle_Factory; 
 	}
 	
 	public static SqlSessionFactory getMariaSqlSession () throws FileNotFoundException {
